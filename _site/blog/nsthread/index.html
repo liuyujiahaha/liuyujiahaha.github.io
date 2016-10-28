@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学习笔记之网络请求</title>
+  <meta name="description" content="这篇文章归纳了NSThread、线程同步、GCD的相关知识点，留作日后复习。">
+
+  <link rel="stylesheet" href="/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="http://localhost:4000/blog/nsthread/">
+  <link rel="alternate" type="application/rss+xml" title="liuyujiahaha" href="http://localhost:4000/feed.xml">
+  <script src="/assets/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+  <script src="/assets/js/js.js" | prepend: site.baseurl }}"></script>
+  <script src="/assets/js/jPages.js" | prepend: site.baseurl }}"></script>
+  <script src="/assets/js/script.js" | prepend: site.baseurl }}"></script>
+  <script src="/assets/js/snap.svg-min.js" | prepend: site.baseurl }}"></script>
+  <script src="/assets/js/svg-animation.js" | prepend: site.baseurl }}"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      /* initiate the plugin */
+      $("div.pag-holder").jPages({
+        containerID  : "pag-itemContainer",
+        perPage      : 5,  /* num of items per page */
+        startPage    : 1,
+        startRange   : 1,
+        midRange     : 4,
+        endRange     : 1
+      });
+    });
+  </script>
+</head>
+
+
+<body>
+
+<div class="main-wrapper">
+	<header id="header">
+  <div class="wrapper">
+    <nav>
+      
+        <a href=" /">Home</a>
+        <a href=" /blog ">Blog</a>
+        <a href=" /feed.xml "><i class="fa fa-rss" aria-hidden="true"></i></a>
+      
+    </nav>
+  </div>
+</header>
+
+	<section id="banner">
+    <div class="wrapper">
+	    <svg id="ice-bear" xmlns="http://www.w3.org/2000/svg"  version="1.1" width="100%" height="100%" viewBox="0 0 800 400">
+		
+            <g id="welcom-text" style="text-shadow: 1px 1px #EFEFEF, 2px 2px #ccc">
+                <text x="50" y="130" fill="#ed5565" font-size="100">W</text>
+                <text x="160" y="180" fill="#f4b350" font-size="100">E</text>
+                <text x="230" y="140" fill="#f2db94" font-size="130">L</text>
+                <text x="310" y="160" fill="#62ddbd" font-size="100">C</text>
+                <text x="400" y="160" fill="#62B3E5" font-size="90">O</text>
+                <text x="480" y="160" fill="#ec87c0" font-size="120">M</text>
+                <text x="600" y="160" fill="#b3aeef" font-size="100">E</text>
+            </g>
+            <g id="bear-head" fill="white">
+                <circle r="20" cx="385" cy="310"/>
+                <circle r="20" cx="505" cy="310"/>
+                <path d="M 365 400 V 360 A30 30 0 0 1 525 360 V 400"/>
+                <circle r="5px" cx="415" cy="330" fill="black"/>
+                <circle r="5px" cx="475" cy="330" fill="black"/>
+                <ellipse rx="15" ry="10" cx="445" cy="340" fill="black"/>
+                <path d="M435 360 Q 445 370 455 360" stroke="black" stroke-width="2"/>
+            </g>
+            <g id="bear-paw">
+                <path d="M 305 400 V 300 A30 30 0 0 1 365 300 V 400"fill="white" stroke="#C4E8F8" stroke-width="1px"/>
+                <g fill="#62B3E5">
+                    <circle r="5" cx="315" cy="295"/>
+                    <circle r="5" cx="355" cy="295"/>
+                    <circle r="5" cx="327" cy="285"/>
+                    <circle r="5" cx="343" cy="285"/>
+                    <ellipse rx="15" ry="10" cx="335" cy="310"/>
+                </g>
+                <!--<animateTransform attributeName="transform" begin="0s" dur="3s" type="rotate" values="-14 340 400;15 340 400;-15 340 400" repeatCount="indefinite"/>-->
+            </g>
+            <path d="M50 410 Q 150 360 280 370 Q 410 390 640 360 Q 700 350 750 410 H 50 "  fill="#62B3E5"/>
+			
+         </svg>
+    </div>
+</section>
+
+	<section style="padding-bottom: 0">
+		<article class="wrapper">
+			<div class="post-header">
+			<h2 class="red-title" >学习笔记之网络请求</h2>
+			<ul class="tags">
+				
+				<li><a href="/tags#CN">CN</a></li>
+				
+				
+				<li><a href="/tags#front-end">front-end</a></li>
+				
+				
+			</ul>
+			<div class="line-highlight">15 Sep 2016</div>
+			</div>
+			<div class="post-content">
+				<h4 id="section">1.不要同时打开太多的线程</h4>
+<ul>
+  <li>1至3条线程即可，不要超过5条</li>
+</ul>
+
+<h4 id="section-1">2.线程概念</h4>
+<ul>
+  <li>主线程：UI线程，显示、刷新UI界面，处理UI控件的事件</li>
+  <li>子线程：后台线程，异步线程</li>
+</ul>
+
+<h4 id="section-2">3.不要把耗时的操作放在主线程，要放在子线程中执行</h4>
+
+<h2 id="nsthread">二、NSThread</h2>
+<hr />
+
+<h4 id="section-3">1.创建和启动线程的3中方式</h4>
+<ol>
+  <li>
+    <p>先创建，后启动</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> // 创建
+ 	NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(download:) object:nil];
+ // 启动
+ [thread start];
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>创建完自动启动</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> [NSThread detachNewThreadSelector:@selector(download:) toTarget:self withObject:nil];
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>隐式创建(自动启动)</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> [self performSelectorInBackground:@selector(download:) withObject:nil];
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h4 id="section-4">2.常见方法</h4>
+<ol>
+  <li>
+    <p>获取当前线程</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> + (NSThread *)currentThread;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>获取主线程</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> + (NSThread *)mainThread;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>睡眠(暂停)线程</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> + (void)sleepUntilDate:(NSDate *)date;
+ + (void)sleepForTimeInterval:(NSTimeInterval)ti;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>设置线程名字</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> - (void)setName:(NSString *)n;
+ - (NSString *)name;
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="section-5">三、线程同步</h3>
+<ol>
+  <li>实质：为了防止多个线程抢夺同一个资源造成的数据安全问题</li>
+  <li>
+    <p>实现：给代码加一个互斥锁(同步锁)</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> @synchronized(self) {
+ // 被锁住的代码
+ }
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="gcd">四、GCD</h3>
+<p>1.队列和任务</p>
+
+<p>1&gt; 任务 ：需要执行什么操作</p>
+<ul>
+  <li>用block来封装任务</li>
+</ul>
+
+<p>2&gt; 队列 ：存放任务</p>
+
+<ul>
+  <li>
+    <p>全局的并发队列 ： 可以让任务并发执行
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</p>
+  </li>
+  <li>
+    <p>自己创建的串行队列 ： 让任务一个接着一个执行
+dispatch_queue_t queue = dispatch_queue_create(“cn.heima.queue”, NULL);</p>
+  </li>
+  <li>
+    <p>主队列 ： 让任务在主线程执行
+dispatch_queue_t queue = dispatch_get_main_queue();</p>
+  </li>
+</ul>
+
+<p>2.执行任务的函数</p>
+
+<p>1&gt; 同步执行 : 不具备开启新线程的能力
+dispatch_sync…</p>
+
+<p>2&gt; 异步执行 : 具备开启新线程的能力
+dispatch_async…</p>
+
+<p>3.常见的组合</p>
+
+<p>1&gt; dispatch_async + 全局并发队列
+2&gt; dispatch_async + 自己创建的串行队列</p>
+
+<p>4.线程间的通信</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+	// 执行耗时的异步操作...
+	dispatch_async(dispatch_get_main_queue(), ^{
+   // 回到主线程，执行UI刷新操作
+	});
+});
+</code></pre>
+</div>
+
+<p>5.GCD的所有API都在libdispatch.dylib，Xcode会自动导入这个库</p>
+
+<ul>
+  <li>主头文件 ： #import &lt;dispatch/dispatch.h&gt;</li>
+</ul>
+
+<p>6.延迟执行</p>
+
+<p>1&gt; perform….</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 3秒后自动回到当前线程调用self的download:方法，并且传递参数：@"http://555.jpg"
+[self performSelector:@selector(download:) withObject:@"http://555.jpg" afterDelay:3];
+</code></pre>
+</div>
+
+<p>2&gt; dispatch_after…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 任务放到哪个队列中执行
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+double delay = 3; // 延迟多少秒
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), queue, ^{
+// 3秒后需要执行的任务
+});
+</code></pre>
+</div>
+
+<p>7.一次性代码</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>static dispatch_once_t onceToken;
+dispatch_once(&amp;onceToken, ^{
+// 这里面的代码，在程序运行过程中，永远只会执行1次
+});
+</code></pre>
+</div>
+
+			</div>
+			
+<div class="post-pagination text-center">
+  
+  <a href="/blog/javascript-reading-notes/" class="btn-pagination" title="学习笔记之《JavaScript 高级程序设计》（上篇）
+">Next</a>
+  
+  
+  <a href="/blog/review-and-plan/" class="btn-pagination" title="写在学期初：年中总结与规划
+">Previous</a>
+  
+</div>
+
+			
+<div style="margin-top:30px">
+    <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/blog/nsthread/" class="share-btn twitter-btn" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=http://localhost:4000/blog/nsthread/" class="share-btn googleplus-btn" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/nsthread/" class="share-btn facebook-btn" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i></a>
+    <a href="http://v.t.sina.com.cn/share/share.php?title=http://localhost:4000/blog/nsthread/" class="share-btn weibo-btn" title="Share on Sina Weibo"><i class="fa fa-fw fa-weibo" aria-hidden="true"></i></a>
+</div>
+
+
+		</article>
+	</section>
+	<section id="comments">
+    <div class="wrapper">
+        <div class="line-highlight"><i class="fa fa-paw" aria-hidden="true"></i></div>
+        <h1 class="blue-title">Comments</h1>
+        <div id="disqus_thread"></div>
+		<div class="comment-desc">Powered by Disqus. If your browser can't load comments successfully, maybe you need to use a vpn.</div>
+        <script async defer src="/assets/js/disqus-script.js" | prepend: site.baseurl }}"></script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+	<footer id="footer">
+  <div class="footer-border"></div>
+  <div class="footer-content">
+    <div class="social-wrapper text-center">
+      <ul class="social-lists">
+        <li><a class="social-btn btn-white" href="mailto:sunday417378336@163.com / liuyujiahaha@gmail.com" target="_blank" rel="noopener noreferrer" title="Mail me"><i class="fa fa-fw fa-envelope"></i></a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li><a class="social-btn btn-white" href="http://github.com/liuyujiahaha" target="_blank" rel="noopener noreferrer" title="Follow me on Github"><i class="fa fa-fw fa-github"></i></a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+    <div class="copyright text-center">Copyright © 2016 Song Kong. Powered by Jekyll.</div>
+  </div>
+  <div id="top" class="btn-top" style="display:none">
+    <a href=" #header "><i class="fa fa-paw" aria-hidden="true"></i></a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>

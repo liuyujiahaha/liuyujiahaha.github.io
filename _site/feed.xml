@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>水榭清松-Song Kong</title>
-    <description>This is Song' home.</description>
+    <title>liuyujiahaha</title>
+    <description>Max will build here weekly</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Oct 2016 14:29:54 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Oct 2016 14:29:54 +0800</lastBuildDate>
+    <pubDate>Fri, 28 Oct 2016 16:21:14 +0800</pubDate>
+    <lastBuildDate>Fri, 28 Oct 2016 16:21:14 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -175,6 +175,197 @@
         <category>front-end</category>
         
         <category>JavaScript</category>
+        
+        
+        <category>Front-end</category>
+        
+      </item>
+    
+      <item>
+        <title>学习笔记之网络请求</title>
+        <description>&lt;h4 id=&quot;section&quot;&gt;1.不要同时打开太多的线程&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;1至3条线程即可，不要超过5条&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;2.线程概念&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;主线程：UI线程，显示、刷新UI界面，处理UI控件的事件&lt;/li&gt;
+  &lt;li&gt;子线程：后台线程，异步线程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;3.不要把耗时的操作放在主线程，要放在子线程中执行&lt;/h4&gt;
+
+&lt;h2 id=&quot;nsthread&quot;&gt;二、NSThread&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;1.创建和启动线程的3中方式&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;先创建，后启动&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // 创建
+ 	NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(download:) object:nil];
+ // 启动
+ [thread start];
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建完自动启动&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [NSThread detachNewThreadSelector:@selector(download:) toTarget:self withObject:nil];
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;隐式创建(自动启动)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [self performSelectorInBackground:@selector(download:) withObject:nil];
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;2.常见方法&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取当前线程&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; + (NSThread *)currentThread;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取主线程&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; + (NSThread *)mainThread;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;睡眠(暂停)线程&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; + (void)sleepUntilDate:(NSDate *)date;
+ + (void)sleepForTimeInterval:(NSTimeInterval)ti;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;设置线程名字&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; - (void)setName:(NSString *)n;
+ - (NSString *)name;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;三、线程同步&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;实质：为了防止多个线程抢夺同一个资源造成的数据安全问题&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;实现：给代码加一个互斥锁(同步锁)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @synchronized(self) {
+ // 被锁住的代码
+ }
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;gcd&quot;&gt;四、GCD&lt;/h3&gt;
+&lt;p&gt;1.队列和任务&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; 任务 ：需要执行什么操作&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;用block来封装任务&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2&amp;gt; 队列 ：存放任务&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;全局的并发队列 ： 可以让任务并发执行
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;自己创建的串行队列 ： 让任务一个接着一个执行
+dispatch_queue_t queue = dispatch_queue_create(“cn.heima.queue”, NULL);&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;主队列 ： 让任务在主线程执行
+dispatch_queue_t queue = dispatch_get_main_queue();&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2.执行任务的函数&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; 同步执行 : 不具备开启新线程的能力
+dispatch_sync…&lt;/p&gt;
+
+&lt;p&gt;2&amp;gt; 异步执行 : 具备开启新线程的能力
+dispatch_async…&lt;/p&gt;
+
+&lt;p&gt;3.常见的组合&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; dispatch_async + 全局并发队列
+2&amp;gt; dispatch_async + 自己创建的串行队列&lt;/p&gt;
+
+&lt;p&gt;4.线程间的通信&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+	// 执行耗时的异步操作...
+	dispatch_async(dispatch_get_main_queue(), ^{
+   // 回到主线程，执行UI刷新操作
+	});
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;5.GCD的所有API都在libdispatch.dylib，Xcode会自动导入这个库&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;主头文件 ： #import &amp;lt;dispatch/dispatch.h&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;6.延迟执行&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; perform….&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 3秒后自动回到当前线程调用self的download:方法，并且传递参数：@&quot;http://555.jpg&quot;
+[self performSelector:@selector(download:) withObject:@&quot;http://555.jpg&quot; afterDelay:3];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2&amp;gt; dispatch_after…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 任务放到哪个队列中执行
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+double delay = 3; // 延迟多少秒
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), queue, ^{
+// 3秒后需要执行的任务
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;7.一次性代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static dispatch_once_t onceToken;
+dispatch_once(&amp;amp;onceToken, ^{
+// 这里面的代码，在程序运行过程中，永远只会执行1次
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 15 Sep 2016 13:40:30 +0800</pubDate>
+        <link>http://localhost:4000/blog/nsthread/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/nsthread/</guid>
+        
+        <category>CN</category>
+        
+        <category>front-end</category>
         
         
         <category>Front-end</category>
