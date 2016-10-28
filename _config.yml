@@ -1,20 +1,55 @@
-# Permalinks
-permalink:        pretty
+#Site
+title: liuyujiahaha
+description: Max will build here weekly
+logo: favicon.png
+url: # kongsong.me
+rss_url: # /feed.xml
 
+# Jekyll
+permalink:          /blog/:title/
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+sass:
+  sass_dir:         assets/_sass
+  style:            compressed
 
-# Setup
-gems:             [jekyll-paginate]
-title:            Poole
-tagline:          The Jekyll Butler
-url:              http://getpoole.com
-paginate:         1
-baseurl:          /
-author:
-  name:           Mark Otto
-  url:            https://twitter.com/mdo
-  email:          markdotto@gmail.com
+# Social Links
+email:               sunday417378336@163.com / liuyujiahaha@gmail.com
+#google.plus:        username
+#twitter:            username
 
-# Custom vars
-version:          1.0.0
-github:
-  repo:           https://github.com/poole/poole
+github:              liuyujiahaha
+# stackoverflow:      6438519/song-kong   #from a "http://stackoverflow.com/users/123456/username" link
+# linkedin:           kongsong
+#xing:              username
+#instagram:          username
+#lastfm:            username
+#tumblr:            username
+#pinterest:         username
+#foursquare:        username
+#steam:              username
+#dribbble:          username
+#youtube:           username
+#soundcloud:        username
+#weibo:             username
+#flickr:            username
+#codepen:           username
+#keybase:           username
+#xmpp:              username@server.com
+#hackernews:        username
+#behance:           username
+
+# Gems
+gems:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+
+# Exclude list
+exclude: [README.md, Gemfile, Gemfile.lock, _site, src, vendor, CNAME, LICENSE, Rakefile,.sass-cache,.DS_Store,.idea]

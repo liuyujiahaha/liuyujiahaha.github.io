@@ -4,7 +4,7 @@
  <title>liuyujiahaha</title>
  <link href="http://localhost:4000atom.xml" rel="self"/>
  <link href="http://localhost:4000"/>
- <updated>2016-10-28T16:48:14+08:00</updated>
+ <updated>2016-10-28T16:48:54+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name></name>
@@ -13,211 +13,337 @@
 
  
  <entry>
-   <title>Introducing Poole</title>
-   <link href="http://localhost:4000/blog/introducing-poole/"/>
-   <updated>2014-01-02T00:00:00+08:00</updated>
-   <id>http://localhost:4000/blog/introducing-poole</id>
-   <content type="html">&lt;p&gt;&lt;em&gt;The Strange Case of Dr. Jekyll and Mr. Hyde&lt;/em&gt; tells the story of a lawyer investigating the connection of two persons, Dr. Henry Jekyll and Mr. Edward Hyde. Chief among the novel’s supporting cast is a man by the name of Mr. Poole, Dr. Jekyll’s loyal butler.&lt;/p&gt;
+   <title>Ice Bear Jekyll Theme</title>
+   <link href="http://localhost:4000/blog/ice-bear-jekyll-theme/"/>
+   <updated>2016-10-01T15:52:30+08:00</updated>
+   <id>http://localhost:4000/blog/ice-bear-jekyll-theme</id>
+   <content type="html">&lt;p&gt;This is my first jekyll theme decorated by my favorite items – blue and ice bear. It’s welcomed to give me a star at github if you like it.&lt;/p&gt;
 
+&lt;p&gt;&lt;a class=&quot;github-button&quot; href=&quot;https://github.com/songkong/Blog/tree/gh-pages&quot; data-count-href=&quot;/songkong/Blog/stargazers&quot; data-count-api=&quot;/repos/songkong/Blog#stargazers_count&quot; data-count-aria-label=&quot;# stargazers on GitHub&quot; aria-label=&quot;Star songkong/Blog on GitHub&quot;&gt;Star&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;Poole is the butler for &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;, the static site generator. It’s designed and developed by &lt;a href=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt; to provide a clear and concise foundational setup for any Jekyll site. It does so by furnishing a full vanilla Jekyll install with example templates, pages, posts, and styles.&lt;/p&gt;
-
-&lt;p&gt;There are currently two themes built on Poole:&lt;/p&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://hyde.getpoole.com&quot;&gt;Hyde&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://lanyon.getpoole.com&quot;&gt;Lanyon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Fork the repository. &lt;a class=&quot;github-button&quot; href=&quot;https://github.com/songkong/Blog/fork&quot; data-count-href=&quot;/songkong/Blog/network&quot; data-count-api=&quot;/repos/songkong/Blog#forks_count&quot; data-count-aria-label=&quot;# forks on GitHub&quot; aria-label=&quot;Fork songkong/Blog on GitHub&quot;&gt;Fork&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/li&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;About me&lt;/code&gt; content in &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add your own &lt;code class=&quot;highlighter-rouge&quot;&gt;projects&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/projects.html&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Change &lt;code class=&quot;highlighter-rouge&quot;&gt;domain name&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add your own &lt;code class=&quot;highlighter-rouge&quot;&gt;disqus&lt;/code&gt; code in &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/comments.html&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The last two scripts in &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/js/script.js&lt;/code&gt; offer Google Analytics and Baidu Analytics. You can replace them with your own codes.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Learn more and contribute on &lt;a href=&quot;https://github.com/poole&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;style-test&quot;&gt;Style test&lt;/h1&gt;
+&lt;hr /&gt;
 
-&lt;h3 id=&quot;whats-included&quot;&gt;What’s included&lt;/h3&gt;
+&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
 
-&lt;p&gt;Poole is a streamlined Jekyll site designed and built as a foundation for building more meaningful themes. Poole, and every theme built on it, includes the following:&lt;/p&gt;
+&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Complete Jekyll setup included (layouts, config, &lt;a href=&quot;/404.html&quot;&gt;404&lt;/a&gt;, &lt;a href=&quot;/atom.xml&quot;&gt;RSS feed&lt;/a&gt;, posts, and &lt;a href=&quot;/about&quot;&gt;example page&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Mobile friendly design and development&lt;/li&gt;
-  &lt;li&gt;Easily scalable text and component sizing with &lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt; units in the CSS&lt;/li&gt;
-  &lt;li&gt;Support for a wide gamut of HTML elements&lt;/li&gt;
-  &lt;li&gt;Related posts (time-based, because Jekyll) below each post&lt;/li&gt;
-  &lt;li&gt;Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
 
-&lt;p&gt;Additional features are available in individual themes.&lt;/p&gt;
+&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
 
-&lt;h3 id=&quot;browser-support&quot;&gt;Browser support&lt;/h3&gt;
+&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
 
-&lt;p&gt;Poole and it’s themes are by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.&lt;/p&gt;
-
-&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
-
-&lt;p&gt;Poole is developed on and hosted with GitHub. Head to the &lt;a href=&quot;https://github.com/poole/poole&quot;&gt;GitHub repository&lt;/a&gt; for downloads, bug reports, and features requests.&lt;/p&gt;
-
-&lt;p&gt;Thanks!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Example content</title>
-   <link href="http://localhost:4000/blog/example-content/"/>
-   <updated>2014-01-01T00:00:00+08:00</updated>
-   <id>http://localhost:4000/blog/example-content</id>
-   <content type="html">&lt;div class=&quot;message&quot;&gt;
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-&lt;/div&gt;
-
-&lt;p&gt;Cum sociis natoque penatibus et magnis &lt;a href=&quot;#&quot;&gt;dis parturient montes&lt;/a&gt;, nascetur ridiculus mus. &lt;em&gt;Aenean eu leo quam.&lt;/em&gt; Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt;
+&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+  &lt;h3 id=&quot;heading-3-in-blockquotes&quot;&gt;Heading 3 in Blockquotes&lt;/h3&gt;
+  &lt;p&gt;Normal Blockquotes text.&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Unordered List in Blockquotes.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;Ordered List in Blockquotes.&lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Etiam porta &lt;strong&gt;sem malesuada magna&lt;/strong&gt; mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt;
-
-&lt;h2 id=&quot;inline-html-elements&quot;&gt;Inline HTML elements&lt;/h2&gt;
-
-&lt;p&gt;HTML defines a long list of available inline tags, a complete list of which can be found on the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element&quot;&gt;Mozilla Developer Network&lt;/a&gt;.&lt;/p&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;To bold text&lt;/strong&gt;, use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;To italicize text&lt;/em&gt;, use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;em&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Abbreviations, like &lt;abbr title=&quot;HyperText Markup Langage&quot;&gt;HTML&lt;/abbr&gt; should use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt;, with an optional &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; attribute for the full phrase.&lt;/li&gt;
-  &lt;li&gt;Citations, like &lt;cite&gt;— Mark otto&lt;/cite&gt;, should use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;Deleted&lt;/del&gt; text should use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;del&amp;gt;&lt;/code&gt; and &lt;ins&gt;inserted&lt;/ins&gt; text should use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;ins&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Superscript &lt;sup&gt;text&lt;/sup&gt; uses &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;sup&amp;gt;&lt;/code&gt; and subscript &lt;sub&gt;text&lt;/sub&gt; uses &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Unordered List.
+    &lt;ul&gt;
+      &lt;li&gt;Unordered List.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Most of these elements are styled by browsers with few modifications on our part.&lt;/p&gt;
-
-&lt;h2 id=&quot;heading&quot;&gt;Heading&lt;/h2&gt;
-
-&lt;p&gt;Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;p&gt;Cum sociis natoque penatibus et magnis dis &lt;code class=&quot;highlighter-rouge&quot;&gt;code element&lt;/code&gt; montes, nascetur ridiculus mus.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console
-&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those arguments
-&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;return a + b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Call the function
-&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.&lt;/p&gt;
-
-&lt;h3 id=&quot;gists-via-github-pages&quot;&gt;Gists via GitHub Pages&lt;/h3&gt;
-
-&lt;p&gt;Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.&lt;/p&gt;
-
-&lt;p&gt;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.&lt;/p&gt;
-
-&lt;h3 id=&quot;lists&quot;&gt;Lists&lt;/h3&gt;
-
-&lt;p&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et.&lt;/li&gt;
-  &lt;li&gt;Donec id elit non mi porta gravida at eget metus.&lt;/li&gt;
-  &lt;li&gt;Nulla vitae elit libero, a pharetra augue.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Vestibulum id ligula porta felis euismod semper.&lt;/li&gt;
-  &lt;li&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/li&gt;
-  &lt;li&gt;Maecenas sed diam eget risus varius blandit sit amet non magna.&lt;/li&gt;
+  &lt;li&gt;Ordered List
+    &lt;ol&gt;
+      &lt;li&gt;Ordered List&lt;/li&gt;
+      &lt;li&gt;Ordered List&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ordered List&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ruby&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;codes&lt;/span&gt;
 
-&lt;dl&gt;
-  &lt;dt&gt;HyperText Markup Language (HTML)&lt;/dt&gt;
-  &lt;dd&gt;The language used to describe and define the content of a Web page&lt;/dd&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'parallel'&lt;/span&gt;
 
-  &lt;dt&gt;Cascading Style Sheets (CSS)&lt;/dt&gt;
-  &lt;dd&gt;Used to describe the appearance of Web content&lt;/dd&gt;
+&lt;span class=&quot;no&quot;&gt;Parallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lots_of_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;heavy_computation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-  &lt;dt&gt;JavaScript (JS)&lt;/dt&gt;
-  &lt;dd&gt;The programming language used to build advanced Web sites and applications&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
-
-&lt;h3 id=&quot;images&quot;&gt;Images&lt;/h3&gt;
-
-&lt;p&gt;Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://placehold.it/800x400&quot; alt=&quot;placeholder&quot; title=&quot;Large example image&quot; /&gt;
-&lt;img src=&quot;http://placehold.it/400x200&quot; alt=&quot;placeholder&quot; title=&quot;Medium example image&quot; /&gt;
-&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;placeholder&quot; title=&quot;Small example image&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
-
-&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Upvotes&lt;/th&gt;
-      &lt;th&gt;Downvotes&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Totals&lt;/td&gt;
-      &lt;td&gt;21&lt;/td&gt;
-      &lt;td&gt;23&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Alice&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;11&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Bob&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Charlie&lt;/td&gt;
-      &lt;td&gt;7&lt;/td&gt;
-      &lt;td&gt;9&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/poole/poole/issues/new&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
-   <title>What's Jekyll?</title>
-   <link href="http://localhost:4000/blog/whats-jekyll/"/>
-   <updated>2013-12-31T00:00:00+08:00</updated>
-   <id>http://localhost:4000/blog/whats-jekyll</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From &lt;a href=&quot;https://github.com/jekyll/jekyll/blob/master/README.markdown&quot;&gt;the project’s readme&lt;/a&gt;:&lt;/p&gt;
+   <title>学习笔记之《JavaScript 高级程序设计》（上篇）</title>
+   <link href="http://localhost:4000/blog/javascript-reading-notes/"/>
+   <updated>2016-09-15T13:40:30+08:00</updated>
+   <id>http://localhost:4000/blog/javascript-reading-notes</id>
+   <content type="html">&lt;h1 id=&quot;section&quot;&gt;目录&lt;/h1&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Jekyll is a simple, blog aware, static site generator. It takes a template directory […] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.&lt;/p&gt;
+  &lt;h4 id=&quot;javascriptchapter1-&quot;&gt;第一章【 &lt;a href=&quot;#chapter1&quot;&gt;JavaScript简介&lt;/a&gt; 】&lt;/h4&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href=&quot;#chapter1-1&quot;&gt;ECMAScript&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#chapter1-2&quot;&gt;文档对象模型（DOM）&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#chapter1-3&quot;&gt;浏览器对象模型（BOM）&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;It’s an immensely useful tool. Find out more by &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;visiting the project on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;chapter1&quot;&gt;第一章  JavaScript简介&lt;/h3&gt;
+
+&lt;p&gt;一个完整的 JavaScript 实现由如下三个部分组成：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;核心（ECMAJavaScript）&lt;/li&gt;
+  &lt;li&gt;文档对象模型（DOM）&lt;/li&gt;
+  &lt;li&gt;浏览器对象模型（BOM）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;chapter1-1&quot;&gt;1.1 ECMAScript&lt;/h4&gt;
+
+&lt;p&gt;ECMAScript 是由 ECMA-262 定义的与&lt;code class=&quot;highlighter-rouge&quot;&gt;宿主环境&lt;/code&gt;（如 Web 浏览器、Node 和 Adobe Flash 等）没有依赖关系的一门语言，该语言本身并不包括输入和输出定义。宿主环境不仅提供基本的 ECMAScript 实现，同时还会提供该语言的扩展，如 DOM。&lt;/p&gt;
+
+&lt;p&gt;ECMA-262 规定了这门语言的下列组成：语法、类型、语句、关键字、保留字、操作符、对象。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;chapter1-2&quot;&gt;1.2 文档对象模型（DOM）&lt;/h4&gt;
+
+&lt;p&gt;文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的 API。 DOM 把整个页面映射为一个多层节点结构，HTML 或 XML页面中的每个组成部分都是某种类型的节点，这些节点又包含着不同类型的数据。通过 DOM 创建的文档树形图并借助 DOM 提供的 API，可以轻松的对节点进行删除、添加、替换或修改等操作。&lt;/p&gt;
+
+&lt;p&gt;由于 Netscape 和微软在开发 DHTML 方面持不同意见，这影响了 Web 跨平台性能。于是，W3C 开始着手规划 DOM。1998 年 DOM1 级（DOM Level 1）成为 W3C 的推荐标准。DOM1 级由两个模块组成：DOM 核心（DOM Core）和 DOM HTML。其中 DOM 核心规定了如何映射基于 XML 的文档结构，以便简化对文档中任意部分的访问和操作。DOM HTML 模块在 DOM 核心基础上添加了针对 HTML 的对象和方法。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;DOM 并不只是针对 JS，很多别的语言也实现了 DOM。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;DOM2 级引入了如下新模块：DOM 视图（DOM Views）、DOM 事件（DOM Events）、DOM 样式（DOM Style）和 DOM 遍历和范围（DOM Traversal and Range）。&lt;/p&gt;
+
+&lt;p&gt;DOM3 级在 DOM 加载和保存（DOM Load and Save）模块中引入了以统一方式加载和保存文档的方法，在 DOM 验证（DOM Validation）模块中新增了验证文档的方法。同时 DOM3 级也开始支持 XML 1.0 规范，涉及 XML Infoset、XPath 和 XML Base。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注：DOM0 级标准是不存在的，只是 DOM 历史坐标中的一个参照点。具体来说，它指的是 IE 4.0 和 Netscape Navigator 4.0 最初支持的 DHTML。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;除了 DOM 核心和 DOM HTML 接口之外，另外几种语言也发布了针对自己的 DOM 标准。以下基于 XML 的语言，它们的 DOM 标准都添加了与特定语言相关的新方法和新接口，且这些语言都是 W3C 的推荐标准：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SVG （Scalable Vector Graphic，可伸缩矢量图）1.0；&lt;/li&gt;
+  &lt;li&gt;MathML（Mathematical Markup Language，数学标记语言）1.0；&lt;/li&gt;
+  &lt;li&gt;SMIL（Synchronized Multimedia Integration Language，同步多媒体集成语言）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;chapter1-3&quot;&gt;1.3 浏览器对象模型（BOM）&lt;/h4&gt;
+
+&lt;p&gt;浏览器对象模型（BOM，Browser Object Model）提供访问和操作浏览器窗口的方法和接口。使用 BOM 可以控制浏览器显示的页面以外的部分。由于没有 BOM 标准可以遵循，因此每个浏览器都有自己的实现。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>学习笔记之网络请求</title>
+   <link href="http://localhost:4000/blog/nsthread/"/>
+   <updated>2016-09-15T13:40:30+08:00</updated>
+   <id>http://localhost:4000/blog/nsthread</id>
+   <content type="html">&lt;h4 id=&quot;section&quot;&gt;1.不要同时打开太多的线程&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;1至3条线程即可，不要超过5条&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;2.线程概念&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;主线程：UI线程，显示、刷新UI界面，处理UI控件的事件&lt;/li&gt;
+  &lt;li&gt;子线程：后台线程，异步线程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;3.不要把耗时的操作放在主线程，要放在子线程中执行&lt;/h4&gt;
+
+&lt;h2 id=&quot;nsthread&quot;&gt;二、NSThread&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;1.创建和启动线程的3中方式&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;先创建，后启动&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // 创建
+ 	NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(download:) object:nil];
+ // 启动
+ [thread start];
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建完自动启动&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [NSThread detachNewThreadSelector:@selector(download:) toTarget:self withObject:nil];
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;隐式创建(自动启动)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [self performSelectorInBackground:@selector(download:) withObject:nil];
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;2.常见方法&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取当前线程&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; + (NSThread *)currentThread;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取主线程&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; + (NSThread *)mainThread;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;睡眠(暂停)线程&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; + (void)sleepUntilDate:(NSDate *)date;
+ + (void)sleepForTimeInterval:(NSTimeInterval)ti;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;设置线程名字&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; - (void)setName:(NSString *)n;
+ - (NSString *)name;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;三、线程同步&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;实质：为了防止多个线程抢夺同一个资源造成的数据安全问题&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;实现：给代码加一个互斥锁(同步锁)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @synchronized(self) {
+ // 被锁住的代码
+ }
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;gcd&quot;&gt;四、GCD&lt;/h3&gt;
+&lt;p&gt;1.队列和任务&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; 任务 ：需要执行什么操作&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;用block来封装任务&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2&amp;gt; 队列 ：存放任务&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;全局的并发队列 ： 可以让任务并发执行
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;自己创建的串行队列 ： 让任务一个接着一个执行
+dispatch_queue_t queue = dispatch_queue_create(“cn.heima.queue”, NULL);&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;主队列 ： 让任务在主线程执行
+dispatch_queue_t queue = dispatch_get_main_queue();&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2.执行任务的函数&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; 同步执行 : 不具备开启新线程的能力
+dispatch_sync…&lt;/p&gt;
+
+&lt;p&gt;2&amp;gt; 异步执行 : 具备开启新线程的能力
+dispatch_async…&lt;/p&gt;
+
+&lt;p&gt;3.常见的组合&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; dispatch_async + 全局并发队列
+2&amp;gt; dispatch_async + 自己创建的串行队列&lt;/p&gt;
+
+&lt;p&gt;4.线程间的通信&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+	// 执行耗时的异步操作...
+	dispatch_async(dispatch_get_main_queue(), ^{
+   // 回到主线程，执行UI刷新操作
+	});
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;5.GCD的所有API都在libdispatch.dylib，Xcode会自动导入这个库&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;主头文件 ： #import &amp;lt;dispatch/dispatch.h&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;6.延迟执行&lt;/p&gt;
+
+&lt;p&gt;1&amp;gt; perform….&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 3秒后自动回到当前线程调用self的download:方法，并且传递参数：@&quot;http://555.jpg&quot;
+[self performSelector:@selector(download:) withObject:@&quot;http://555.jpg&quot; afterDelay:3];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2&amp;gt; dispatch_after…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 任务放到哪个队列中执行
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+double delay = 3; // 延迟多少秒
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), queue, ^{
+// 3秒后需要执行的任务
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;7.一次性代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static dispatch_once_t onceToken;
+dispatch_once(&amp;amp;onceToken, ^{
+// 这里面的代码，在程序运行过程中，永远只会执行1次
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </content>
  </entry>
  
