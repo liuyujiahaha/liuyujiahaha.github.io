@@ -13,6 +13,8 @@ title: About Me
 
 - You can find me on - 
 * GMail: liuyujiahaha@Gmail.com
+* Stackoverfolw: liuyujia
+* Github: liuyujiahaha
 * Weibo: liuyujiajia
 * WeChat: liuyujiahaha
 * QQ: 417378336
