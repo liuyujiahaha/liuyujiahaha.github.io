@@ -1,0 +1,19 @@
+---
+layout: default
+title: Post Categories
+nod: 1
+---
+
+<a name="uncategorized"></a><h1 class="post-index-cat">Uncategorized</h1>
+{% for post in site.posts %}{% if post.category == null %}
+{% include post_in_list.html %}
+{% endif %}{% endfor %}
+
+{% for category in site.categories %}
+{% capture catname %}{{ category | first }}{% endcapture %}
+<br>
+<a name="{{ catname }}"></a><h1 class="post-index-cat">{{ catname }}</h1>
+{% for post in site.categories[catname] %}
+ {% include post_in_list.html %}
+{% endfor %}
+{% endfor %}
