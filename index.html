@@ -1,5 +1,12 @@
 ---
 layout: default
-nav: home
+title: Home
+nod: 1
 ---
-I'm Liu, a iOS Application Developer from shenzhen. This is my online blog, where I share thoughts about iOS and front-end development, my daily life and other insteresting topics. Feel free to contact me by email if you have any question.
+
+{% for post in site.posts limit:5%}
+    <h1>{{ post.title }}</h1>
+    {{ post.content | strip_html | truncatewords: 70 }}
+    <br><span style="float: right"><a href="{{ post.url }}">More &rarr;</a></span>
+<br><br><br>
+{% endfor %}

@@ -1,36 +1,25 @@
-<!DOCTYPE html>
-<html>
+---
+rtype: post
+layout: default
+---
+<article class="post">
 
-{% include head.html %}
+	{% if page.external-url %}
+		<h1>
+			<a href="{{ page.external-url }}">{{ page.title }}</a> 
+			<a class="anchor" href="{{ page.url }}"><i class="icon-anchor"></i></a>
+		</h1>
+	{% endif %}
+	
+	<div class="post-content" id="data">{{ content }}</div>
+	
+	<br>
+	<hr>
+	<div id="post-tags">
+		<p>{% for tag in page.tags %}<a href="/blog/tags.html#{{ tag }}"> <span class="button button-tag">{{tag}}</span> </a> {% endfor %}</p>
+	</div>
+	<p><a href="http://www.facebook.com/sharer.php?u={{ site.fullpath }}{{ page.url | escape }}"><span class="button noborder facebook white">Facebook</span></a> 
+		 <a href="http://twitter.com/intent/tweet?text={{ page.title | escape }}&url={{ site.fullpath }}{{ page.url | escape }}&via={{ site.author.twitter }}"><span class="button noborder twitter white">Twitter</span></a> 
+		 <a href="https://plus.google.com/share?url={{ site.fullpath }}{{ page.url | escape }}"><span class="button noborder gplus white">Google+</span></a></p>
 
-<body>
-
-<div class="main-wrapper">
-	{% include header.html %}
-	{% include banner.html %}
-	<section style="padding-bottom: 0">
-		<article class="wrapper">
-			<div class="post-header">
-			<h2 class="red-title" >{{ page.title }}</h2>
-			<ul class="tags">
-				{% for tag in page.tags %}
-				<li><a href="/tags#{{ tag }}">{{ tag }}</a></li>
-				{% unless forloop.last %}
-				{% endunless %}
-				{% endfor %}
-			</ul>
-			<div class="line-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}<i class="fa fa-paw" aria-hidden="true"></i>{% endif %}</div>
-			</div>
-			<div class="post-content">
-				{{ content }}
-			</div>
-			{% include post-pagination.html %}
-			{% include share.html %}
-		</article>
-	</section>
-	{% include comments.html %}
-	{% include footer.html %}
-</div>
-
-</body>
-</html>
+</article>

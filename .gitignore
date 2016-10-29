@@ -1,4 +1,4 @@
-archive
-node_modules
-.idea
-.sass-cache
+_site
+.jekyll-metadata
+_test*
+_temp*
