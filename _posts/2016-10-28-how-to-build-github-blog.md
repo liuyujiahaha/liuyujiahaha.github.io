@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "step by step to build github blog"
+title: "一步一步创建github Page博客"
 date: 2016-10-28 20:10:30 +0800
 categories: [iOS]
 excerpt: how to build a github blog in person.
