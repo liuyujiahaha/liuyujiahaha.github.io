@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "step by step to build github blog"
-date: 2015-04-15 20:10:30 +0800
+date: 2016-10-28 20:10:30 +0800
 categories: [iOS]
 excerpt: how to build a github blog in person.
 tags:
