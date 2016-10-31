@@ -80,7 +80,7 @@ tags:
 
 ### 二、从其他线程回到主线程的方式
 
-####1.perform...
+####  1.perform...
 
 {% highlight ruby %}
 	[self performSelectorOnMainThread:<#(SEL)#> withObject:<#(id)#> waitUntilDone:<#(BOOL)#>];
@@ -88,7 +88,7 @@ tags:
 
 
 
-####2.GCD
+####  2.GCD
 
 {% highlight ruby %}
 	dispatch_async(dispatch_get_main_queue(), ^{
@@ -97,7 +97,7 @@ tags:
 {% endhighlight %}
 
 
-####3.NSOperationQueue
+####  3.NSOperationQueue
 
 {% highlight ruby %}
 	[[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -107,7 +107,7 @@ tags:
 
 
 
-###三、判断编译器的环境：ARC还是MRC？
+###  三、判断编译器的环境：ARC还是MRC？
 
 {% highlight ruby %}
 	#if __has_feature(objc_arc)
@@ -121,18 +121,18 @@ tags:
 
 
 
-###四、类的初始化方法
+### 四、类的初始化方法
 
-####1.+(void)load
+#### 1.+(void)load
 
 * 当某个类第一次装载到OC运行时系统（内存）时，就会调用
 * 程序一启动就会调用
 * 程序运行过程中，只会调用1次
 
-####2.+(void)initialize
+#### 2.+(void)initialize
 
 * 当某个类第一次被使用时（比如调用了类的某个方法），就会调用
 * 并非程序一启动就会调用
 
-####3.在程序运行过程中：
+#### 3.在程序运行过程中：
 1个类中的某个操作，只想执行1次，那么这个操作放到+(void)load方法中最合适
