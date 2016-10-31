@@ -79,6 +79,7 @@ NSURLRequest *request = [NSURLRequest request requestWithURL:url];
 ##### 2.注意点：千万不能用NSMutableData来拼接服务器返回的数据
 
 ### 二、NSURLConnection发送异步请求的方法
+
 ##### 1.block形式 - 除开大文件下载以外的操作，都可以用这种形式
 [NSURLConnection sendAsynchronousRequest:<#(NSURLRequest *)#> queue:<#(NSOperationQueue *)#> completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
     
