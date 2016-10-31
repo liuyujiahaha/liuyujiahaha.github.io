@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NSOperation和NSOperationQueue"
-date:   2016-06-05 21:16:10 +0800
+date:   2016-10-29 21:16:10 +0800
 categories: [iOS]
 excerpt: 
 tags:
@@ -13,7 +13,9 @@ tags:
 
 
 ### 一、NSOperation和NSOperationQueue
+
 #### 1.队列的类型
+
 1> 主队列
 
 * [NSOperationQueue mainQueue]
@@ -77,6 +79,7 @@ tags:
 
 
 ### 二、从其他线程回到主线程的方式
+
 ####1.perform...
 
 {% highlight ruby %}
@@ -119,12 +122,15 @@ tags:
 
 
 ###四、类的初始化方法
+
 ####1.+(void)load
+
 * 当某个类第一次装载到OC运行时系统（内存）时，就会调用
 * 程序一启动就会调用
 * 程序运行过程中，只会调用1次
 
 ####2.+(void)initialize
+
 * 当某个类第一次被使用时（比如调用了类的某个方法），就会调用
 * 并非程序一启动就会调用
 
