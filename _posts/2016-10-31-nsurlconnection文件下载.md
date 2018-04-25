@@ -6,7 +6,6 @@ categories: [iOS]
 excerpt: 各种文件下载方式
 tags:
   - 文件下载
-  - NSURLConnection+下载
 ---
 
 ### 一、大文件下载

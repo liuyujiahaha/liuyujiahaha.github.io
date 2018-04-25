@@ -6,8 +6,6 @@ categories: [iOS]
 excerpt: 
 tags:
   - iOS
-  - NSOperation
-  - NSOperationQueue
 ---
 
 

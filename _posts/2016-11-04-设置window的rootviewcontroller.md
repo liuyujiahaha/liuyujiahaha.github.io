@@ -6,7 +6,6 @@ categories: [iOS]
 excerpt:
 tags:
   - UI
-  - 框架
 ---
 
 ##### 设置Window的rootViewController
