@@ -1,3 +1,12 @@
+---
+layout: post
+title:  "Self Introduction"
+date:   3018-04-25 22:36:30 +0800
+categories: [iOS]
+excerpt: 
+tags:
+  - iOS
+---
 ### 自我介绍
 
 ![image](https://liuyujiahaha.github.io/blogPic/headIcon.jpg)
