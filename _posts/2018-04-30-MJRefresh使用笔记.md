@@ -18,3 +18,11 @@ tags:
 ###### 自定义文字的话，只要prepare中在setstate就可以了；
 
 ![image](https://liuyujiahaha.github.io/blogPic/MJRefresh类的关系.jpg)
+
+
+
+
+#### 参考资料
+*1.MJRefresh原理分析https://www.jianshu.com/p/8d44e1ee5693*
+
+*2.解读 MJRefresh 框架 https://www.jianshu.com/p/437095c88717*
